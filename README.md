@@ -1,4 +1,4 @@
-#FireDNS
+# FireDNS
 ___
 
 ###### A just for fun localhost DNS server written in golang.
