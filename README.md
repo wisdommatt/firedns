@@ -18,9 +18,9 @@ ___
 3. On the terminal run `dig meghee.com @localhost -p8090`
 
 ## Notes
-> The application runs only on port 8090.
-> The only supported domains are meghee.com and timiun.com
-> Checking for an unsupported domain will return an IP of 129.0.1.9
+> The application runs only on port 8090. \
+> The only supported domains are meghee.com and timiun.com \
+> Checking for an unsupported domain will return an IP of 129.0.1.9 
 
 ## Author
 [Wisdom Matthew](https://github.com/wisdommatt/)
