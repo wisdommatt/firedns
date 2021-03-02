@@ -6,7 +6,7 @@ import "net"
 func getWebsiteIP(website string) (net.IP, error) {
 	ips, err := net.LookupIP(website)
 	if err != nil {
-		return "", err
+		return nil, err
 	}
 	for _, ip := range ips {
 		ipv4 := ip.To4()
@@ -14,5 +14,5 @@ func getWebsiteIP(website string) (net.IP, error) {
 			return ipv4, nil
 		}
 	}
-	return "", nil
+	return nil, nil
 }

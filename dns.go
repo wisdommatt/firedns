@@ -27,6 +27,7 @@ func main() {
 	udpConn, err := net.ListenUDP("udp", &addr)
 	if err != nil {
 		log.Println(err)
+		return
 	}
 	defer udpConn.Close()
 	// Waiting to get request on that port
