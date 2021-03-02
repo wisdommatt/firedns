@@ -18,6 +18,8 @@ func main() {
 		"meghee.com": "176.32.103.205",
 	}
 
+	// getWebsiteIP("cloudnotte.com")
+
 	addr := net.UDPAddr{
 		Port: 8090,
 		IP:   net.ParseIP("127.0.0.1"),
@@ -67,4 +69,19 @@ func serveDNS(conn *net.UDPConn, addr net.Addr, dns *layers.DNS) {
 		panic(err)
 	}
 	conn.WriteTo(buffer.Bytes(), addr)
+}
+
+// getWebsiteIP returns a website's IP address.
+func getWebsiteIP(website string) (string, error) {
+	ips, err := net.LookupIP(website)
+	if err != nil {
+		return "", err
+	}
+	for _, ip := range ips {
+		ipv4 := ip.To4()
+		if ipv4 != nil {
+			return ipv4.String(), nil
+		}
+	}
+	return "", nil
 }
