@@ -46,7 +46,7 @@ func serveDNS(conn *net.UDPConn, addr net.Addr, dns *layers.DNS) {
 	ipAddress, exist := domains[requestDomain]
 	if !exist {
 		log.Println("Domain not found !")
-		ip, _, _ = net.ParseCIDR("129.0.1.9" + "/24")
+		ip, _, _ = net.ParseCIDR("/24")
 	} else {
 		ip, _, _ = net.ParseCIDR(ipAddress + "/24")
 	}
